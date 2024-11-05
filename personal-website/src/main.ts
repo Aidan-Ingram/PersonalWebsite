@@ -1,6 +1,19 @@
+// src/main.ts
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import { Routes, provideRouter } from '@angular/router';
+import { HomePageComponent } from './app/home-page/home-page.component'; // Import the HomePage component
 
-bootstrapApplication(AppComponent, appConfig)
+// Define your routes
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },  // Redirect to home
+  { path: 'home', component: HomePageComponent },        // Route to HomePageComponent
+];
+
+// Configure the application with the router
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes),  // Use provideRouter to set up the routing
+  ],
+})
   .catch((err) => console.error(err));
