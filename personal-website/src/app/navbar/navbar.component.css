@@ -1,0 +1,12 @@
+/* src/app/navbar/navbar.component.css */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.navbar-nav .nav-item .nav-link.active {
+  color: #f8f9fa !important; /* Light color for active link text */
+  background-color: #007bff; /* Blue background for active link */
+  border-radius: 5px;
+}
